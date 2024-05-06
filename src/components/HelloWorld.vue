@@ -1,10 +1,15 @@
 <script setup>
+import { ref } from "vue";
+
 defineProps({
   msg: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
+
+const emailInput = ref("");
+const nameInput = ref("");
 </script>
 
 <template>
@@ -15,6 +20,14 @@ defineProps({
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
+    <div>
+      <input v-model="nameInput" id="name1" type="text" />
+      <span>{{ nameInput }}</span>
+    </div>
+    <div>
+      <input v-model="emailInput" id="email1" type="email" />
+      <span>{{ emailInput }}</span>
+    </div>
   </div>
 </template>
 
